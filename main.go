@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/hi", greating)
+	serveMux := &http.ServeMux{}
+	serveMux.HandleFunc("/hi", greating)
+	serveMux.HandleFunc("/bye", parting)
 
 	server := &http.Server{}
 	listener, err := net.Listen("tcp", ":1234")
@@ -25,4 +27,14 @@ func greating(response http.ResponseWriter, request *http.Request) {
 	}
 
 	fmt.Fprint(response, "Hi, Bala!\n")
+}
+
+func parting(response http.ResponseWriter, request *http.Request) {
+	if request.Method != http.MethodGet {
+		response.WriteHeader(http.StatusMethodNotAllowed)
+		fmt.Fprint(response, http.StatusText(http.StatusMethodNotAllowed)+"\n")
+		return
+	}
+
+	fmt.Fprint(response, "Bye, Bala!\n")
 }
