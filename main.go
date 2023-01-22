@@ -16,6 +16,8 @@ func main() {
 	}
 
 	server.Serve(listener)
+
+	fmt.Printf("Push main")
 }
 
 func greating(response http.ResponseWriter, request *http.Request) {
