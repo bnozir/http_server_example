@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	serveMux := &http.ServeMux{}
 	serveMux.HandleFunc("/hi", greating)
 	serveMux.HandleFunc("/bye", parting)
