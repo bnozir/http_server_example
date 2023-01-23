@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	serveMux := &http.ServeMux{}
 	serveMux.HandleFunc("/hi", greating)
 	serveMux.HandleFunc("/bye", parting)
@@ -19,8 +18,6 @@ func main() {
 	}
 
 	server.Serve(listener)
-
-	fmt.Printf("Pull Request!")
 }
 
 func greating(response http.ResponseWriter, request *http.Request) {
