@@ -1,0 +1,7 @@
+# configs
+*.json
+*.yaml
+
+# logs
+*.txt
+*.log
