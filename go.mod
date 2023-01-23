@@ -1,3 +1,3 @@
-module github.com/bnozir/http_server_example
+module github.com/bnozir/todoes
 
 go 1.19
