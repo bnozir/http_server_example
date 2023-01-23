@@ -11,7 +11,7 @@ func main() {
 	serveMux.HandleFunc("/hi", greating)
 	serveMux.HandleFunc("/bye", parting)
 
-	server := &http.Server{}
+	server := &http.Server{Handler: serveMux}
 	listener, err := net.Listen("tcp", ":1234")
 	if err != nil {
 		panic(err)
