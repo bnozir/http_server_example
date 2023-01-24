@@ -1,8 +1,6 @@
 package db_test
 
 import (
-	"errors"
-	"fmt"
 	"testing"
 
 	"github.com/bnozir/todoes/internal/db"
@@ -37,8 +35,6 @@ func TestDBMockFindTodoByID(t *testing.T) {
 		t.Fatalf("not failed on FindTodoByID: expected: error, got: %s", err)
 	}
 	if err != nil {
-		err1 := fmt.Errorf("wrong id value")
-		t.Log("error ecurred as expected: ", errors.Is(err, err1))
 		t.Logf("error ecurred as expected: %s", err)
 	}
 }
