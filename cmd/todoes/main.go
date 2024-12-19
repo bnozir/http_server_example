@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net"
 	"net/http"
 
@@ -22,6 +23,7 @@ func main() {
 			Handler: r.ServeMux,
 		}}
 
+	fmt.Println("Server is running on port 1234")
 	err = s.Run()
 	if err != nil {
 		panic(err)
