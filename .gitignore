@@ -1,3 +1,6 @@
+.idea
+.vscode
+
 # configs
 *.json
 *.yaml

@@ -9,20 +9,20 @@ import (
 )
 
 func main() {
-	routes := &routes.Routes{ServeMux: &http.ServeMux{}}
-	routes.Init()
+	r := &routes.Routes{ServeMux: &http.ServeMux{}}
+	r.Init()
 
 	listener, err := net.Listen("tcp", ":1234")
 	if err != nil {
 		panic(err)
 	}
-	server := &server.Server{
+	s := &server.Server{
 		Listener: listener,
 		Server: http.Server{
-			Handler: routes.ServeMux,
+			Handler: r.ServeMux,
 		}}
 
-	err = server.Run()
+	err = s.Run()
 	if err != nil {
 		panic(err)
 	}
